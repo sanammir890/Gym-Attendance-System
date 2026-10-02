@@ -1,0 +1,327 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+    background-color: #f5f5f5;
+    font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 16px;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+    width: 100%;
+    color: #000; /* Changed from #333 to black */
+}
+
+.hidden {
+    display: none !important;
+}
+
+.app-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #1e88e5;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #000; /* Changed from #1e88e5 to black */
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #000; /* Ensure black text for h3 */
+}
+
+main {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1rem;
+}
+
+.tab-btn {
+    padding: 0.75rem 1rem;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    font-weight: 500;
+    flex: 1;
+    text-align: center;
+    transition: all 0.3s ease;
+    color: #000 !important; /* Force black text for tab buttons */
+}
+
+.tab-btn.active {
+    border-bottom-color: #1e88e5;
+    color: #000 !important; /* Keep active tab text black */
+}
+
+.tab-content {
+    display: none;
+    padding: 1rem 0;
+    color: #000; /* Ensure black text in tab content */
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #000; /* Ensure black text for labels */
+}
+
+input, select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #000; /* Ensure black text for inputs */
+}
+
+button {
+    background-color: #1e88e5;
+    color: #000 !important; /* Changed from white to black */
+    border: none;
+    border-radius: 4px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold; /* Make text bold for better visibility */
+}
+
+button:hover {
+    background-color: #1976d2;
+}
+
+#check-in-btn, #check-out-btn {
+    width: 48%;
+    margin-top: 0.5rem;
+    color: #000 !important; /* Ensure black text */
+}
+
+#check-in-btn {
+    margin-right: 2%;
+    background-color: #43a047;
+}
+
+#check-out-btn {
+    background-color: #e53935;
+}
+
+/* Member Card */
+.member-card {
+    display: flex;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-top: 1rem;
+    color: #000; /* Ensure black text in member card */
+}
+
+.member-photo {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-details {
+    flex: 1;
+    padding: 1rem;
+    color: #000; /* Ensure black text in member details */
+}
+
+.member-details p {
+    margin-bottom: 0.5rem;
+    color: #000; /* Ensure black text in member details paragraphs */
+}
+
+/* Attendance status styles */
+#attendance-status-display {
+    color: #000 !important; /* Force black text for attendance status */
+    font-weight: bold;
+}
+
+.checked-in, .checked-out, .not-checked-in {
+    color: #000 !important; /* Force black text for all status classes */
+}
+
+/* Photo Preview */
+.photo-preview {
+    width: 120px;
+    height: 120px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.photo-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Members List */
+.search-bar {
+    margin-bottom: 1rem;
+}
+
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.member-item {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    color: #000; /* Ensure black text in member items */
+}
+
+.member-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.75rem 1.5rem;
+    background-color: #333;
+    color: #000 !important; /* Changed from white to black */
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+    font-weight: bold;
+}
+
+.notification.success {
+    background-color: #43a047;
+    color: #000 !important;
+}
+
+.notification.error {
+    background-color: #e53935;
+    color: #000 !important;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #000; /* Keep text black even in dark mode */
+    }
+    
+    h2 {
+        color: #000; /* Keep headings black in dark mode */
+    }
+    
+    .member-card, .member-item {
+        background-color: #f5f5f5; /* Lighter background for better contrast with black text */
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    
+    .member-details, .member-details p {
+        color: #000; /* Ensure member details stay black in dark mode */
+    }
+    
+    input, select {
+        background-color: #f5f5f5; /* Lighter background for inputs */
+        color: #000; /* Keep input text black */
+        border-color: #444;
+    }
+    
+    .tabs {
+        border-bottom-color: #444;
+    }
+    
+    label {
+        color: #000; /* Keep labels black in dark mode */
+    }
+    
+    .tab-content {
+        color: #000; /* Keep tab content text black in dark mode */
+    }
+}
+
+/* Additional tab-specific styles to ensure black text */
+#attendance-tab, 
+#register-tab, 
+#members-tab {
+    color: #000 !important;
+}
+
+#attendance-tab *, 
+#register-tab *, 
+#members-tab * {
+    color: #000 !important;
+}
+
+/* Override any other text colors */
+p, span, div, h1, h2, h3, h4, h5, h6, label, input, select, option {
+    color: #000 !important;
+}
+
+/* All buttons should have black text */
+button, .tab-btn, input[type="submit"], input[type="button"] {
+    color: #000 !important;
+    font-weight: bold !important;
+}

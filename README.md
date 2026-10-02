@@ -1,1 +1,1 @@
-# Gym-Attendance-System
+# Gym-attendance-system
